@@ -1,0 +1,22 @@
+[
+  {"id": 1, "enunciado": "¿Cuál es el lenguaje oficial recomendado para Android moderno?",
+    "opciones": ["Kotlin", "Swift", "PHP", "Ruby"], "indiceCorrecto": 0, "categoria": "Programación"},
+  {"id": 2, "enunciado": "¿Qué patrón separa la UI de la lógica en esta materia?",
+    "opciones": ["MVC", "MVVM", "Singleton", "Builder"], "indiceCorrecto": 1, "categoria": "Programación"},
+  {"id": 3, "enunciado": "¿Qué almacena Jetpack DataStore?",
+    "opciones": ["Pares clave-valor", "Tablas SQL", "Videos", "Nada"], "indiceCorrecto": 0, "categoria": "Android"},
+  {"id": 4, "enunciado": "¿Qué librería se usa para crear interfaces declarativas?",
+    "opciones": ["Jetpack Compose", "Bootstrap", "jQuery", "Unity"], "indiceCorrecto": 0, "categoria": "Android"},
+  {"id": 5, "enunciado": "¿Qué palabra de Kotlin declara una variable inmutable?",
+    "opciones": ["var", "val", "let", "const"], "indiceCorrecto": 1, "categoria": "Programación"},
+  {"id": 6, "enunciado": "¿Qué clase conserva el estado al rotar la pantalla?",
+    "opciones": ["Activity", "ViewModel", "Intent", "Toast"], "indiceCorrecto": 1, "categoria": "Android"},
+  {"id": 7, "enunciado": "¿Qué tipo de flujo guarda siempre un valor actual?",
+    "opciones": ["StateFlow", "List", "String", "Toast"], "indiceCorrecto": 0, "categoria": "Android"},
+  {"id": 8, "enunciado": "¿Cómo se llama el método que crea una copia modificada de una data class?",
+    "opciones": ["clone", "copy", "duplicate", "new"], "indiceCorrecto": 1, "categoria": "Programación"},
+  {"id": 9, "enunciado": "¿Qué archivo contiene los textos traducibles de la app?",
+    "opciones": ["strings.xml", "build.gradle", "AndroidManifest.xml", "Theme.kt"], "indiceCorrecto": 0, "categoria": "Android"},
+  {"id": 10, "enunciado": "¿Qué significa UDF?",
+    "opciones": ["Flujo unidireccional de datos", "Unidad de diseño final", "Usuario de datos fijos", "Ultra data format"], "indiceCorrecto": 0, "categoria": "Programación"}
+]

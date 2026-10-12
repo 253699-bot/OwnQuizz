@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">OwnQuizz</string>
+    <string name="titulo_quiz">OwnQuizz</string>
+    <string name="titulo_agregar">Nueva pregunta</string>
+    <string name="titulo_resultados">¡Quiz terminado!</string>
+    <string name="aciertos">Aciertos: %1$d</string>
+    <string name="errores">Errores: %1$d</string>
+    <string name="racha">Racha: %1$d</string>
+    <string name="correcto">¡Correcto!</string>
+    <string name="incorrecto">Incorrecto</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="todas">Todas</string>
+    <string name="progreso_pregunta">Pregunta %1$d de %2$d</string>
+    <string name="sin_preguntas">No hay preguntas disponibles.</string>
+    <string name="porcentaje">%1$d%%</string>
+    <string name="reiniciar">Reiniciar</string>
+    <string name="agregar_pregunta">Agregar pregunta</string>
+    <string name="volver">Volver</string>
+    <string name="enunciado">Enunciado</string>
+    <string name="opcion_n">Opción %1$d</string>
+    <string name="categoria">Categoría</string>
+    <string name="instruccion_correcta">Marca con el círculo la opción correcta</string>
+    <string name="guardar">Guardar</string>
+    <string name="error_campos_vacios">Completa todos los campos.</string>
+    <string name="error_opciones_repetidas">Las opciones no pueden repetirse.</string>
+</resources>s>
