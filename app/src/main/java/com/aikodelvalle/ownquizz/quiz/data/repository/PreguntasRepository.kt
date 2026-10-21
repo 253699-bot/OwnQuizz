@@ -1,6 +1,6 @@
 package com.aikodelvalle.ownquizz.quiz.data.repository
 
-import com.aikodelvalle.ownquizz.quiz.data.datasource.Pregunta
+import com.aikodelvalle.ownquizz.quiz.data.model.Pregunta
 import com.aikodelvalle.ownquizz.quiz.data.datasource.PreguntasSemillaDataSource
 import com.aikodelvalle.ownquizz.quiz.data.datasource.PreguntasUsuarioDataStore
 import kotlinx.coroutines.flow.Flow

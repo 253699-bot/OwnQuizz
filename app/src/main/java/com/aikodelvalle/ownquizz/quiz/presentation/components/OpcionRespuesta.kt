@@ -1,6 +1,8 @@
 package com.aikodelvalle.ownquizz.quiz.presentation.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -8,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import com.aikodelvalle.ownquizz.ui.theme.RespuestaCorrecta
 import com.aikodelvalle.ownquizz.ui.theme.RespuestaIncorrecta
 
@@ -34,7 +37,10 @@ fun OpcionRespuesta(
     OutlinedButton(
         onClick = onClick,
         enabled = habilitada,
-        modifier = modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(12.dp),
+        modifier = modifier
+            .fillMaxWidth()
+            .heightIn(min = 48.dp),
         colors = ButtonDefaults.outlinedButtonColors(
             containerColor = fondo,
             disabledContainerColor = fondo,

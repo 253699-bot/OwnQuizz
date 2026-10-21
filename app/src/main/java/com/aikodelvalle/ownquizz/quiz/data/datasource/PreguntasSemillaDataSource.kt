@@ -2,6 +2,7 @@ package com.aikodelvalle.ownquizz.quiz.data.datasource
 
 import android.content.Context
 import com.aikodelvalle.ownquizz.R
+import com.aikodelvalle.ownquizz.quiz.data.model.Pregunta
 import org.json.JSONArray
 
 class PreguntasSemillaDataSource(private val context: Context) {

@@ -3,23 +3,17 @@ package com.aikodelvalle.ownquizz
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.ui.Modifier
-import com.aikodelvalle.ownquizz.quiz.presentation.screens.QuizRoute
+import androidx.activity.enableEdgeToEdge
+import com.aikodelvalle.ownquizz.scaffold.screens.OwnQuizzApp
 import com.aikodelvalle.ownquizz.ui.theme.OwnQuizzTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
             OwnQuizzTheme {
-                Scaffold { padding ->
-                    QuizRoute(
-                        onAgregarPregunta = {},
-                        modifier = Modifier.padding(padding)
-                    )
-                }
+                OwnQuizzApp()
             }
         }
     }

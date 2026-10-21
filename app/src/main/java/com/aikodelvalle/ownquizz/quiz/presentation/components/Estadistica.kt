@@ -10,13 +10,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.graphics.Color
+
 
 @Composable
-fun Estadistica(texto: String, modifier: Modifier = Modifier) {
+fun Estadistica(
+    texto: String,
+    modifier: Modifier = Modifier,
+    color: Color
+) {
     Card(
         modifier = modifier,
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.secondaryContainer
+            containerColor = color
         )
     ) {
         Text(

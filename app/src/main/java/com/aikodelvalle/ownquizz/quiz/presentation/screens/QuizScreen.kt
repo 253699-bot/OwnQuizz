@@ -1,3 +1,4 @@
+
 package com.aikodelvalle.ownquizz.quiz.presentation.screens
 
 import androidx.compose.foundation.layout.Arrangement
@@ -38,6 +39,7 @@ fun QuizRoute(
     viewModel: QuizViewModel = viewModel(factory = QuizViewModel.Factory)
 ) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
+
     if (state.terminado) {
         ResultadosScreen(
             aciertos = state.aciertos,
@@ -74,24 +76,34 @@ fun QuizScreen(
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        LazyRow(
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
             item {
                 FilterChip(
                     selected = state.categoriaFiltro == null,
                     onClick = { onCategoriaSeleccionada(null) },
-                    label = { Text(stringResource(R.string.todas)) }
+                    label = {
+                        Text(stringResource(R.string.todas))
+                    }
                 )
             }
+
             items(state.categorias) { categoria ->
                 FilterChip(
                     selected = state.categoriaFiltro == categoria,
-                    onClick = { onCategoriaSeleccionada(categoria) },
-                    label = { Text(categoria) }
+                    onClick = {
+                        onCategoriaSeleccionada(categoria)
+                    },
+                    label = {
+                        Text(categoria)
+                    }
                 )
             }
         }
 
         val pregunta = state.preguntaActual
+
         if (pregunta == null) {
             Text(stringResource(R.string.sin_preguntas))
             return@Column
@@ -105,18 +117,46 @@ fun QuizScreen(
             ),
             style = MaterialTheme.typography.labelLarge
         )
+
         LinearProgressIndicator(
             progress = { state.progreso },
             modifier = Modifier.fillMaxWidth()
         )
 
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            Estadistica(stringResource(R.string.aciertos, state.aciertos), Modifier.weight(1f))
-            Estadistica(stringResource(R.string.errores, state.errores), Modifier.weight(1f))
-            Estadistica(stringResource(R.string.racha, state.racha), Modifier.weight(1f))
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Estadistica(
+                texto = stringResource(
+                    R.string.aciertos,
+                    state.aciertos
+                ),
+                modifier = Modifier.weight(1f),
+                color = MaterialTheme.colorScheme.primary
+            )
+
+            Estadistica(
+                texto = stringResource(
+                    R.string.errores,
+                    state.errores
+                ),
+                modifier = Modifier.weight(1f),
+                color = MaterialTheme.colorScheme.error
+            )
+
+            Estadistica(
+                texto = stringResource(
+                    R.string.racha,
+                    state.racha
+                ),
+                modifier = Modifier.weight(1f),
+                color = MaterialTheme.colorScheme.tertiary
+            )
         }
 
-        Card(modifier = Modifier.fillMaxWidth()) {
+        Card(
+            modifier = Modifier.fillMaxWidth()
+        ) {
             Text(
                 text = pregunta.enunciado,
                 modifier = Modifier.padding(16.dp),
@@ -129,18 +169,30 @@ fun QuizScreen(
                 texto = texto,
                 estado = state.estadoOpcion(indice),
                 habilitada = state.respuestaSeleccionada == null,
-                onClick = { onResponder(indice) }
+                onClick = {
+                    onResponder(indice)
+                }
             )
         }
 
         state.acerto?.let { acerto ->
             Text(
-                text = stringResource(if (acerto) R.string.correcto else R.string.incorrecto),
+                text = stringResource(
+                    if (acerto) R.string.correcto
+                    else R.string.incorrecto
+                ),
                 style = MaterialTheme.typography.titleMedium,
-                color = if (acerto) MaterialTheme.colorScheme.primary
-                else MaterialTheme.colorScheme.error
+                color = if (acerto) {
+                    MaterialTheme.colorScheme.primary
+                } else {
+                    MaterialTheme.colorScheme.error
+                }
             )
-            Button(onClick = onSiguiente, modifier = Modifier.align(Alignment.End)) {
+
+            Button(
+                onClick = onSiguiente,
+                modifier = Modifier.align(Alignment.End)
+            ) {
                 Text(stringResource(R.string.siguiente))
             }
         }

@@ -2,12 +2,14 @@ package com.aikodelvalle.ownquizz.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+val VioletaPrimario = Color(0xFF5B3FD0)
+val VioletaContenedor = Color(0xFFE6DEFA)
+val VioletaSobreContenedor = Color(0xFF2B1D6B)
+val GrisContenedor = Color(0xFFE6E3F2)
+val FondoTarjetaPregunta = Color(0xFFF6F4FD)
+val TextoPrincipal = Color(0xFF1D1B20)
+val BordeNeutro = Color(0xFF79747E)
+val ErrorRojo = Color(0xFFB3261E)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
 val RespuestaCorrecta = Color(0xFFC8E6C9)
 val RespuestaIncorrecta = Color(0xFFFFCDD2)

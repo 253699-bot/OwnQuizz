@@ -1,4 +1,4 @@
-package com.aikodelvalle.ownquizz.quiz.data.datasource
+package com.aikodelvalle.ownquizz.quiz.data.model
 
 data class Pregunta(
     val id: Int,
