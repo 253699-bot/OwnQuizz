@@ -1,4 +1,4 @@
-package com.aikodelvalle.ownquizz.ui.quiz
+package com.aikodelvalle.ownquizz.quiz.presentation.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -26,8 +26,10 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.aikodelvalle.ownquizz.R
-import com.aikodelvalle.ownquizz.ui.components.Estadistica
-import com.aikodelvalle.ownquizz.ui.components.OpcionRespuesta
+import com.aikodelvalle.ownquizz.quiz.presentation.components.Estadistica
+import com.aikodelvalle.ownquizz.quiz.presentation.components.OpcionRespuesta
+import com.aikodelvalle.ownquizz.quiz.presentation.viewmodels.QuizUiState
+import com.aikodelvalle.ownquizz.quiz.presentation.viewmodels.QuizViewModel
 
 @Composable
 fun QuizRoute(

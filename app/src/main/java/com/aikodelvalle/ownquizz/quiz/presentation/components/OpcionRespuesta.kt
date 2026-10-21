@@ -1,4 +1,4 @@
-package com.aikodelvalle.ownquizz.ui.components
+package com.aikodelvalle.ownquizz.quiz.presentation.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.ButtonDefaults

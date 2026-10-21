@@ -1,4 +1,4 @@
-package com.aikodelvalle.ownquizz.ui.quiz
+package com.aikodelvalle.ownquizz.quiz.presentation.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.aikodelvalle.ownquizz.data.local.PreguntasSemillaDataSource
-import com.aikodelvalle.ownquizz.data.local.PreguntasUsuarioDataStore
-import com.aikodelvalle.ownquizz.data.repository.PreguntasRepository
+import com.aikodelvalle.ownquizz.quiz.data.datasource.PreguntasSemillaDataSource
+import com.aikodelvalle.ownquizz.quiz.data.datasource.PreguntasUsuarioDataStore
+import com.aikodelvalle.ownquizz.quiz.data.repository.PreguntasRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

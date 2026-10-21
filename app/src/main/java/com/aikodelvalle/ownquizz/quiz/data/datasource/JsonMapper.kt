@@ -1,6 +1,5 @@
-package com.aikodelvalle.ownquizz.data.local
+package com.aikodelvalle.ownquizz.quiz.data.datasource
 
-import com.aikodelvalle.ownquizz.data.model.Pregunta
 import org.json.JSONArray
 import org.json.JSONObject
 

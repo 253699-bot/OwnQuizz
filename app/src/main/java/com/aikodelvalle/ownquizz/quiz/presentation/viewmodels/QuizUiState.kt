@@ -1,7 +1,7 @@
-package com.aikodelvalle.ownquizz.ui.quiz
+package com.aikodelvalle.ownquizz.quiz.presentation.viewmodels
 
-import com.aikodelvalle.ownquizz.data.model.Pregunta
-import com.aikodelvalle.ownquizz.ui.components.EstadoOpcion
+import com.aikodelvalle.ownquizz.quiz.data.datasource.Pregunta
+import com.aikodelvalle.ownquizz.quiz.presentation.components.EstadoOpcion
 
 data class QuizUiState(
     val todas: List<Pregunta> = emptyList(),

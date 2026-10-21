@@ -1,4 +1,4 @@
-package com.aikodelvalle.ownquizz.ui.quiz
+package com.aikodelvalle.ownquizz.quiz.presentation.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,7 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.aikodelvalle.ownquizz.R
-import com.aikodelvalle.ownquizz.ui.components.Estadistica
+import com.aikodelvalle.ownquizz.quiz.presentation.components.Estadistica
 
 @Composable
 fun ResultadosScreen(

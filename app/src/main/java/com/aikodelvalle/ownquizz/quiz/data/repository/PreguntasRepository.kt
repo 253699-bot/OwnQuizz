@@ -1,8 +1,8 @@
-package com.aikodelvalle.ownquizz.data.repository
+package com.aikodelvalle.ownquizz.quiz.data.repository
 
-import com.aikodelvalle.ownquizz.data.local.PreguntasSemillaDataSource
-import com.aikodelvalle.ownquizz.data.local.PreguntasUsuarioDataStore
-import com.aikodelvalle.ownquizz.data.model.Pregunta
+import com.aikodelvalle.ownquizz.quiz.data.datasource.Pregunta
+import com.aikodelvalle.ownquizz.quiz.data.datasource.PreguntasSemillaDataSource
+import com.aikodelvalle.ownquizz.quiz.data.datasource.PreguntasUsuarioDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

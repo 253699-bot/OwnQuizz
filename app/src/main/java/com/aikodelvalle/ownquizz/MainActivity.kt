@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.aikodelvalle.ownquizz.ui.quiz.QuizRoute
+import com.aikodelvalle.ownquizz.quiz.presentation.screens.QuizRoute
 import com.aikodelvalle.ownquizz.ui.theme.OwnQuizzTheme
 
 class MainActivity : ComponentActivity() {
