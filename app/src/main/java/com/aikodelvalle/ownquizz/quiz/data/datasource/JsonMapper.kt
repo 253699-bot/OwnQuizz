@@ -3,7 +3,7 @@ package com.aikodelvalle.ownquizz.quiz.data.datasource
 import com.aikodelvalle.ownquizz.quiz.data.model.Pregunta
 import org.json.JSONArray
 import org.json.JSONObject
-
+//convierte el JSON en objetos
 object JsonMapper {
 
     fun aLista(array: JSONArray): List<Pregunta> =

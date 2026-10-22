@@ -5,7 +5,7 @@ import com.aikodelvalle.ownquizz.quiz.data.datasource.PreguntasSemillaDataSource
 import com.aikodelvalle.ownquizz.quiz.data.datasource.PreguntasUsuarioDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-
+//junta las dos fuentes (semilla y usuario) y entrega una sola lista al viewmodel
 class PreguntasRepository(
     private val semilla: PreguntasSemillaDataSource,
     private val usuario: PreguntasUsuarioDataStore

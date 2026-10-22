@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
+//maneja el formulario, valida y si todo está bien manda guardar la pregunta
 class AgregarPreguntaViewModel(
     private val repositorio: PreguntasRepository
 ) : ViewModel() {
@@ -56,7 +57,7 @@ class AgregarPreguntaViewModel(
         }
     }
 
-    // La pantalla ya navegó: limpiamos el formulario para la próxima vez
+    // La pantalla ya navegó así que limpiamos el formulario para la próxima vez
     fun onGuardadaConsumida() {
         _uiState.value = AgregarPreguntaUiState()
     }

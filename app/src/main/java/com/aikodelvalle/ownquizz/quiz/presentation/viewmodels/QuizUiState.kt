@@ -2,7 +2,7 @@ package com.aikodelvalle.ownquizz.quiz.presentation.viewmodels
 
 import com.aikodelvalle.ownquizz.quiz.data.model.Pregunta
 import com.aikodelvalle.ownquizz.quiz.presentation.components.EstadoOpcion
-
+//Guarda todo lo que la pantalla necesita
 data class QuizUiState(
     val todas: List<Pregunta> = emptyList(),
     val categoriaFiltro: String? = null,

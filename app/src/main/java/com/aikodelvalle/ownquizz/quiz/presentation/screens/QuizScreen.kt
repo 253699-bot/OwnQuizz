@@ -1,6 +1,6 @@
-
 package com.aikodelvalle.ownquizz.quiz.presentation.screens
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -10,11 +10,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
+import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -31,6 +34,8 @@ import com.aikodelvalle.ownquizz.quiz.presentation.components.Estadistica
 import com.aikodelvalle.ownquizz.quiz.presentation.components.OpcionRespuesta
 import com.aikodelvalle.ownquizz.quiz.presentation.viewmodels.QuizUiState
 import com.aikodelvalle.ownquizz.quiz.presentation.viewmodels.QuizViewModel
+import com.aikodelvalle.ownquizz.ui.theme.RespuestaCorrecta
+import com.aikodelvalle.ownquizz.ui.theme.RespuestaIncorrecta
 
 @Composable
 fun QuizRoute(
@@ -60,7 +65,6 @@ fun QuizRoute(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun QuizScreen(
     state: QuizUiState,
@@ -76,28 +80,19 @@ fun QuizScreen(
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        LazyRow(
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
+        LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             item {
-                FilterChip(
-                    selected = state.categoriaFiltro == null,
-                    onClick = { onCategoriaSeleccionada(null) },
-                    label = {
-                        Text(stringResource(R.string.todas))
-                    }
+                ChipCategoria(
+                    texto = stringResource(R.string.todas),
+                    seleccionado = state.categoriaFiltro == null,
+                    onClick = { onCategoriaSeleccionada(null) }
                 )
             }
-
             items(state.categorias) { categoria ->
-                FilterChip(
-                    selected = state.categoriaFiltro == categoria,
-                    onClick = {
-                        onCategoriaSeleccionada(categoria)
-                    },
-                    label = {
-                        Text(categoria)
-                    }
+                ChipCategoria(
+                    texto = categoria,
+                    seleccionado = state.categoriaFiltro == categoria,
+                    onClick = { onCategoriaSeleccionada(categoria) }
                 )
             }
         }
@@ -123,39 +118,29 @@ fun QuizScreen(
             modifier = Modifier.fillMaxWidth()
         )
 
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             Estadistica(
-                texto = stringResource(
-                    R.string.aciertos,
-                    state.aciertos
-                ),
+                texto = stringResource(R.string.aciertos, state.aciertos),
                 modifier = Modifier.weight(1f),
-                color = MaterialTheme.colorScheme.primary
+                color = RespuestaCorrecta
             )
-
             Estadistica(
-                texto = stringResource(
-                    R.string.errores,
-                    state.errores
-                ),
+                texto = stringResource(R.string.errores, state.errores),
                 modifier = Modifier.weight(1f),
-                color = MaterialTheme.colorScheme.error
+                color = RespuestaIncorrecta
             )
-
             Estadistica(
-                texto = stringResource(
-                    R.string.racha,
-                    state.racha
-                ),
-                modifier = Modifier.weight(1f),
-                color = MaterialTheme.colorScheme.tertiary
+                texto = stringResource(R.string.racha, state.racha),
+                modifier = Modifier.weight(1f)
             )
         }
 
         Card(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surfaceVariant
+            ),
+            border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary)
         ) {
             Text(
                 text = pregunta.enunciado,
@@ -169,32 +154,48 @@ fun QuizScreen(
                 texto = texto,
                 estado = state.estadoOpcion(indice),
                 habilitada = state.respuestaSeleccionada == null,
-                onClick = {
-                    onResponder(indice)
-                }
+                onClick = { onResponder(indice) }
             )
         }
 
         state.acerto?.let { acerto ->
             Text(
                 text = stringResource(
-                    if (acerto) R.string.correcto
-                    else R.string.incorrecto
+                    if (acerto) R.string.correcto else R.string.incorrecto
                 ),
+                modifier = Modifier.align(Alignment.CenterHorizontally),
                 style = MaterialTheme.typography.titleMedium,
-                color = if (acerto) {
-                    MaterialTheme.colorScheme.primary
-                } else {
-                    MaterialTheme.colorScheme.error
-                }
+                color = if (acerto) MaterialTheme.colorScheme.primary
+                else MaterialTheme.colorScheme.error
             )
 
             Button(
                 onClick = onSiguiente,
-                modifier = Modifier.align(Alignment.End)
+                modifier = Modifier.align(Alignment.CenterHorizontally)
             ) {
                 Text(stringResource(R.string.siguiente))
             }
         }
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun ChipCategoria(
+    texto: String,
+    seleccionado: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    FilterChip(
+        selected = seleccionado,
+        onClick = onClick,
+        label = { Text(texto) },
+        modifier = modifier,
+        shape = RoundedCornerShape(50),
+        colors = FilterChipDefaults.filterChipColors(
+            selectedContainerColor = MaterialTheme.colorScheme.primary,
+            selectedLabelColor = MaterialTheme.colorScheme.onPrimary
+        )
+    )
 }

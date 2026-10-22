@@ -15,7 +15,7 @@ import com.aikodelvalle.ownquizz.ui.theme.RespuestaCorrecta
 import com.aikodelvalle.ownquizz.ui.theme.RespuestaIncorrecta
 
 enum class EstadoOpcion { NEUTRA, CORRECTA, INCORRECTA }
-
+//cambia de color según sea neutra, correcta o incorrecta
 @Composable
 fun OpcionRespuesta(
     texto: String,

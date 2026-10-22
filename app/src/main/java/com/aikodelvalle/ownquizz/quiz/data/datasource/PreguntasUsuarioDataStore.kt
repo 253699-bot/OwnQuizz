@@ -8,7 +8,7 @@ import com.aikodelvalle.ownquizz.quiz.data.model.Pregunta
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import org.json.JSONArray
-
+//guarda las preguntas del usuario con DataStore
 private val Context.dataStore by preferencesDataStore(name = "preguntas_usuario")
 
 class PreguntasUsuarioDataStore(private val context: Context) {

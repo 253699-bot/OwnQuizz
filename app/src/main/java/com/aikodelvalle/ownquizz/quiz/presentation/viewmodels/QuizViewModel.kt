@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-
+//contiene la lógica de la pantalla (validar respuesta, racha, avanzar, categ y reiniciar)
 class QuizViewModel(private val repositorio: PreguntasRepository) : ViewModel() {
 
     private val _uiState = MutableStateFlow(QuizUiState())
